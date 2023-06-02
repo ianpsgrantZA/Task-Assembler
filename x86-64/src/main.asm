@@ -5,7 +5,7 @@
 
 section .data 
   welcome1: db "Welcome to TaskManager!", 0x0A, 0x00
-  welcome2: db "Enter you tasks below. You can exit by entering '0'", 0x0A, 0x0A, 0x00
+  welcome2: db "Enter your tasks below. You can exit by entering '0'", 0x0A, 0x0A, 0x00
   input_prompt: db "Enter a new task: ", 0x00
   input_confirmation1: db "You've entered: ", 0x0A, 0x00
   input_confirmation2: db " - ", 0x00
