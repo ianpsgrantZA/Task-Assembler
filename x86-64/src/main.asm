@@ -4,7 +4,7 @@
 
 
 section .data 
-  welcome1: db "Welcome to taskmanager!", 0x0A, 0x00
+  welcome1: db "Welcome to TaskManager!", 0x0A, 0x00
   welcome2: db "Enter you tasks below. You can exit by entering '0'", 0x0A, 0x0A, 0x00
   input_prompt: db "Enter a new task: ", 0x00
   input_confirmation1: db "You've entered: ", 0x0A, 0x00
@@ -52,7 +52,7 @@ _start:
   push r8
   mov rsi, rsp        ; use message as buffer
   call .str_len
-  mov rdx, r9   ; supply message length
+  mov rdx, r9         ; supply message length
   pop r9
   syscall
   ret
@@ -60,9 +60,9 @@ _start:
 .print_data:
   mov rax, 1          ; write syscall
   mov rdi, 1          ; use stdout as file descriptor
-  mov rsi, r8        ; use message as buffer
+  mov rsi, r8         ; use message as buffer
   call .str_len
-  mov rdx, r9   ; supply message length
+  mov rdx, r9         ; supply message length
   syscall
   ret
 
@@ -89,13 +89,13 @@ _start:
   syscall
   ret
 
-.str_len:             ; length of string in r8
+.str_len:                ; length of string in r8
   mov r9, 0              ; initialise length counter 
 .str_len_loop:
   add r8, 1              ; increment character pointer
   add r9, 1              ; increment strlen counter
   cmp byte [r8], 0x00    ; look for 0x00 character
-  jne .str_len_loop               ; loop if not found
+  jne .str_len_loop      ; loop if not found
   ret    
 
 .exit:

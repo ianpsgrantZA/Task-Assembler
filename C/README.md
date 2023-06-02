@@ -1,10 +1,6 @@
 -------------------------------
-# C Language
+# C Language Implementation
 -------------------------------
-
-### Goals
-
-
 
 ### Running instructions
 ```

@@ -12,14 +12,15 @@ int main() {
     char* tasks[50];
     int count = 0;
     printf("--------------------------\n");
-    printf("Welcome to Task Assembler!\n");
+    printf("Welcome to TaskManager!\n");
     printf("--------------------------\n");
     printf("~You can exit by entering a blank task~\n\n");
     printf("Enter a task: ");
 
     fgets(input_string, sizeof input_string, stdin);
 
-    while(input_string[0] != 0xA){ // new line char
+    // new line char
+    while(input_string[0] != 0xA){
         char* task = create_memory(input_string);
         tasks[count] = task;
         count++;
